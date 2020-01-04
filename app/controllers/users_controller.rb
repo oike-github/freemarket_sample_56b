@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_search
+  before_action :authenticate_user!, only: [:card, :logout]
 
   def show
     @user = User.find(params[:id])
